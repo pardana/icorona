@@ -2,7 +2,7 @@
 
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Version</b> 1.0
+        <b>Version</b> 1.1
     </div>
     <strong>Copyright &copy; 2020 <a href="http://www.twitter.com/a_pardana" target="_blank">Aditria Pardana</a>.</strong> All rights reserved.
 </footer>
