@@ -143,7 +143,7 @@ $this->load->view('template/sidebar');
     <!-- Main row -->
     <div class="row">
         <!-- Left col -->
-        <div class="col-md-8">
+        <div class="col-md-5">
             <!-- MAP & BOX PANE -->
             <div class="box box-success">
                 <!-- DISINI -->
@@ -159,8 +159,8 @@ $this->load->view('template/sidebar');
                                     <th>No</th>
                                     <th>Negara</th>
                                     <th>Positif</th>
-                                    <th>Meninggal</th>
                                     <th>Sembuh</th>
+                                    <th>Meninggal</th>
                                 </tr>
                             </thead>
 
@@ -172,8 +172,8 @@ $this->load->view('template/sidebar');
                                             <td><?php echo $i;?></td>
                                             <td><?php echo $arr2['Country_Region']. "<br>";?></td>
                                             <td><?php echo number_format($arr2['Confirmed'], 0, ',', '.'). "<br>";?></td>
-                                            <td><?php echo number_format($arr2['Deaths']   , 0, ',', '.'). "<br>";?></td>
-                                            <td><?php echo number_format($arr2['Recovered'], 0, ',', '.'). "<br>";?></td>
+                                            <td><?php echo number_format($arr2['Recovered']   , 0, ',', '.'). "<br>";?></td>
+                                            <td><?php echo number_format($arr2['Deaths'], 0, ',', '.'). "<br>";?></td>
                                         </tr>
                             <?php $i++; }}  ?>
                             </tbody>
@@ -186,7 +186,7 @@ $this->load->view('template/sidebar');
                 <!-- END DISINI -->
             </div><!-- /.box -->
 
-            <div class="col-md-4">
+            <div class="col-md-2">
             <div class="box box-success">
                 <div class="box" style="text-align:center;">
                         <div class="box-header">
@@ -197,15 +197,62 @@ $this->load->view('template/sidebar');
                             iCORONA, 2020<br/>
                             Created by, <br/>
                             
-                            <img width="30%" src="<?php echo base_url('assets/AdminLTE-2.0.5/dist/img/ttd.png') ?>" class="img-circle"/><br/><br/>
+                            <img width="40%" src="<?php echo base_url('assets/AdminLTE-2.0.5/dist/img/ttd.png') ?>" class="img-circle"/><br/><br/>
 
-                            <font color="red"><b>Aditria Pardana</b></font><br/>
-                            +62 857 8147 6040
+                            <b>
+                            <a href="https://www.twitter.com/a_pardana" target="_blank"><font color="red">Aditria Pardana</font></a>
+                            </b><br/>
+                            <i class="fa fa-phone"></i>&nbsp;<font color="green">+62 857 8147 6040</font>
                         </div>
                 </div>
             </div>
+            </div>
+
+             <!-- PROVINSI -->
+            <div class="col-md-5">
+            <div class="box box-success">
+                <!-- DISINI -->
+                <div class="box">
+                        <div class="box-header">
+                        <h3 class="box-title">Live Data Provinsi INDONESIA [COVID-19]</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                        <table id="table_id" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Provinsi</th>
+                                    <th>Positif</th>
+                                    <th>Sembuh</th>
+                                    <th>Meninggal</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                            <?php $i = 1;
+                                foreach ($data_provinsi as $arr3) { 
+                                    foreach ($arr3 as $arr4) { ?>
+                                    
+                                        <tr>
+                                            <td><?php echo $i;?></td>
+                                            <td><?php echo $arr4['Provinsi']. "<br>";?></td>
+                                            <td><?php echo number_format($arr4['Kasus_Posi'], 0, ',', '.'). "<br>";?></td>
+                                            <td><?php echo number_format($arr4['Kasus_Semb']   , 0, ',', '.'). "<br>";?></td>
+                                            <td><?php echo number_format($arr4['Kasus_Meni'], 0, ',', '.'). "<br>";?></td>
+                                        </tr>
+                            <?php $i++; }}  ?>
+                            </tbody>
+                        </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- END DISINI -->
+            </div><!-- /.box -->
+             <!-- END PROVINSI -->
         </div>
-        </div><!-- /.col -->
     </div><!-- /.row -->
 </section><!-- /.content -->
 
